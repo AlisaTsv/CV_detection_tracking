@@ -10,6 +10,7 @@ import time
 import torch
 import torchvision
 
+# my function - not from yolov7
 def timename():
     dtn = str(datetime.datetime.now())
     dtn = dtn.split()
@@ -19,7 +20,8 @@ def timename():
     name = re.sub(':', '_', name)
     return name
 
-
+# functions from yolov7
+# in letterbox new_shape must be changed if the model has different input size
 def letterbox(img, new_shape=(384, 384), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True, stride=32):
     # Resize and pad image while meeting stride-multiple constraints
     shape = img.shape[:2]  # current shape [height, width]
